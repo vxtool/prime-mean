@@ -1,4 +1,4 @@
-# Sistema de blogging
+# System of blogging
 
 [![licence mit](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](http://hemersonvianna.mit-license.org/)
 [![issues](https://img.shields.io/github/issues/system-solutions/system-blogging.svg?style=flat-square)](https://github.com/system-solutions/system-blogging/issues)
