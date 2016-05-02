@@ -1,19 +1,20 @@
 var express       = require('express');
+var load          = require('express-load');
 var path          = require('path');
 var favicon       = require('serve-favicon');
 var logger        = require('morgan');
 var cookieParser  = require('cookie-parser');
 var bodyParser    = require('body-parser');
+var fs            = require('fs');
 
 var mongoose      = require('mongoose');
 var passport      = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
-var indexRoute    = require('./app/server/controllers/index');
-var adminRoute    = require('./app/server/controllers/admin');
 var app           = express();
 
 app.set('views', path.join(__dirname, 'app/server/views'));
+app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
@@ -34,22 +35,20 @@ app.use(require('express-session')({
   saveUninitialized: false
 }));
 
-app.use(passport.initialize());
-app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRoute);
-app.use('/admin', adminRoute);
+// dynamically include routes (Controller)
+fs.readdirSync('./app/server/controllers').forEach(function (file) {
+  if(file.substr(-3) == '.js') {
+    route = require('./app/server/controllers/' + file);
+    route.controller(app);
+  }
+});
 
-var Account = require('./app/server/models/account');
-passport.use(new LocalStrategy(Account.authenticate()));
-passport.serializeUser(Account.serializeUser());
-passport.deserializeUser(Account.deserializeUser());
-
-mongoose.connect('mongodb://localhost/passport_local_system_blogging');
+load('models').then('controllers').into(app);
 
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
+  var err = new Error('Página não encontrada');
   err.status = 404;
   next(err);
 });
