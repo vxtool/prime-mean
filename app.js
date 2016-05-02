@@ -9,10 +9,10 @@ var mongoose      = require('mongoose');
 var passport      = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
-var routes        = require('./app/routes/index');
+var routes        = require('./app/server/controllers/index');
 var app           = express();
 
-app.set('views', path.join(__dirname, 'app/views'));
+app.set('views', path.join(__dirname, 'app/server/views'));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
@@ -40,7 +40,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 
-var Account = require('./app/models/account');
+var Account = require('./app/server/models/account');
 passport.use(new LocalStrategy(Account.authenticate()));
 passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());
