@@ -1,7 +1,7 @@
-# System of blogging
+# Skeleton MEAN
 
 [![licence mit](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](http://hemersonvianna.mit-license.org/)
-[![issues](https://img.shields.io/github/issues/system-solutions/system-blogging.svg?style=flat-square)](https://github.com/system-solutions/system-blogging/issues)
+[![issues](https://img.shields.io/github/issues/brazilian-dev/skeleton-mean.svg?style=flat-square)](https://github.com/brazilian-dev/skeleton-mean/issues)
 
 ## Install
 
@@ -29,7 +29,7 @@ nodemon ./bin/www
 
 ## Log
 
-Check [Releases](https://github.com/system-solutions/system-blogging/releases) for detailed changelog.
+Check [Releases](https://github.com/brazilian-dev/skeleton-mean/releases) for detailed changelog.
 
 ## License
 
