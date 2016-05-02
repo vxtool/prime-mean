@@ -1,7 +1,7 @@
 {
-  "name": "system-blogging",
+  "name": "skeleton_mean",
   "version": "1.0.0",
-  "description": "System of blogging with MongoDB, Express, Angular and Node.js",
+  "description": "Skeleton with MongoDB, Express, Angular and Node.js",
   "main": "index.js",
   "scripts": {
     "start": "node ./bin/www",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/system-solutions/system-blogging.git"
+    "url": "git+https://github.com/brazilian-dev/skeleton-mean.git"
   },
   "author": "Hemerson Vianna <hemerson.lourenco@gmail.com> (http://hemersonvianna.io)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/system-solutions/system-blogging/issues"
+    "url": "https://github.com/brazilian-dev/skeleton-mean/issues"
   },
-  "homepage": "https://github.com/system-solutions/system-blogging#readme",
+  "homepage": "https://github.com/brazilian-dev/skeleton-mean#readme",
   "dependencies": {
     "body-parser": "~1.13.2",
     "connect-flash": "^0.1.1",
