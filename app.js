@@ -9,7 +9,8 @@ var mongoose      = require('mongoose');
 var passport      = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
-var routes        = require('./app/server/controllers/index');
+var indexRoute    = require('./app/server/controllers/index');
+var adminRoute    = require('./app/server/controllers/admin');
 var app           = express();
 
 app.set('views', path.join(__dirname, 'app/server/views'));
@@ -28,17 +29,17 @@ app.use(require('node-sass-middleware')({
 }));
 
 app.use(require('express-session')({
-    secret: 'keyboard cat',
-    resave: false,
-    saveUninitialized: false
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: false
 }));
 
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-app.use('/', routes);
+app.use('/', indexRoute);
+app.use('/admin', adminRoute);
 
 var Account = require('./app/server/models/account');
 passport.use(new LocalStrategy(Account.authenticate()));

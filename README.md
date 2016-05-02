@@ -7,6 +7,7 @@
 
 ```bash 
 npm install
+mongod
 npm start
 ```
 
@@ -14,6 +15,7 @@ npm start
 
 ```bash 
 npm install -g nodemon
+mongod
 nodemon ./bin/www
 ```
 
