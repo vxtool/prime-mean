@@ -1,0 +1,27 @@
+default:
+  - 'clean'
+  - 'sass'
+  - 'autoprefixer'
+  - 'cmq'
+  - 'cssmin'
+  - 'jshint'
+  - 'uglify'
+  - 'imagemin'
+
+site:
+  - 'sass:site'
+  - 'autoprefixer:site'
+  - 'cmq:site'
+  - 'cssmin:site'
+  - 'jshint:site'
+  - 'uglify:site'
+  - 'imagemin:site'
+
+admin:
+  - 'sass:admin'
+  - 'autoprefixer:admin'
+  - 'cmq:admin'
+  - 'cssmin:admin'
+  - 'jshint:admin'
+  - 'uglify:admin'
+  - 'imagemin:admin'
