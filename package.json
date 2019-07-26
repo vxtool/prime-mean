@@ -1,6 +1,6 @@
 {
   "name": "skeleton_mean",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Skeleton with MongoDB, Express, Angular and Node.js",
   "main": "index.js",
   "scripts": {
